@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  position: relative;
+  font-family: sans-serif;
+  background-color: rgb(223, 223, 223);
+  padding: 0;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(62, 125, 125);
+  padding: 15px 200px;
+  box-shadow: 1px 17px 39px -19px rgba(0, 0, 0, 0.75);
+}
+.header__title {
+  color: rgb(233, 233, 233);
+}
+.header__input {
+  width: 300px;
+  height: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgb(66, 66, 66);
+}
+
+.header__btn {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 30px;
+  color: rgb(66, 66, 66);
+}
