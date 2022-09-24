@@ -39,23 +39,37 @@ async function loadLess(evt) {
 }
 
 function validData(data) {
-  if (data.total === 0) {
-    invisibleBtn();
+  let numberOfPages = Math.ceil(data.totalHits / 40);
+  console.log(pageNumber);
+  console.log(numberOfPages);
+  if (data.totalHits === 0) {
+    invisibleBtn(moreBtnRef);
+    invisibleBtn(lessBtnRef);
     return Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
+  } else if (pageNumber === 1) {
+    visibleBtn(moreBtnRef);
+    invisibleBtn(lessBtnRef);
+    return Notify.success(`Hooray! We found ${data.totalHits} images.`);
+  } else if (pageNumber === numberOfPages) {
+    invisibleBtn(moreBtnRef);
+    visibleBtn(lessBtnRef);
+    return Notify.failure(
+      "We're sorry, but you've reached the end of search results."
+    );
   }
-  Notify.success(`Hooray! We found ${data.total} images.`);
-  visibleBtn();
+  visibleBtn(moreBtnRef);
+  visibleBtn(lessBtnRef);
 }
 
-function visibleBtn() {
-  moreBtnRef.classList.remove('is-hidden');
-  lessBtnRef.classList.remove('is-hidden');
+function visibleBtn(btn) {
+  btn.classList.remove('is-hidden');
+  btn.classList.remove('is-hidden');
 }
-function invisibleBtn() {
-  moreBtnRef.classList.add('is-hidden');
-  lessBtnRef.classList.add('is-hidden');
+function invisibleBtn(btn) {
+  btn.classList.add('is-hidden');
+  btn.classList.add('is-hidden');
 }
 
 gallery.on('show.simplelightbox');

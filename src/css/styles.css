@@ -89,7 +89,7 @@ body {
 }
 .preview {
   display: block;
-  width: 300px;
+  width: 280px;
   margin-bottom: 15px;
 }
 .info *:not(:last-child) {
@@ -107,6 +107,7 @@ body {
   color: rgb(233, 233, 233);
   background-color: rgb(62, 125, 125);
   border: none;
+  box-shadow: 3px 5px 15px 0px rgba(150, 150, 150, 0.7);
 }
 .load-more:hover,
 .load-less:hover {
