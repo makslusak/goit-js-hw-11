@@ -122,3 +122,6 @@ body {
   justify-content: center;
   gap: 30px;
 }
+.sl-caption {
+  background-color: rgba(43, 106, 106, 0.656) !important;
+}
