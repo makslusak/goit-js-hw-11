@@ -51,8 +51,19 @@ body {
   padding: 15px 200px;
   box-shadow: 1px 17px 39px -19px rgba(0, 0, 0, 0.75);
 }
+@media screen and (max-width: 1000px) {
+  .header {
+    gap: 15px;
+    flex-direction: column;
+  }
+}
 .header__title {
   color: rgb(233, 233, 233);
+}
+@media screen and (max-width: 768px) {
+  .header__title {
+    font-size: 18px;
+  }
 }
 .header__input {
   width: 300px;
@@ -62,6 +73,12 @@ body {
   color: rgb(66, 66, 66);
   border: none;
 }
+@media screen and (max-width: 768px) {
+  .header__input {
+    width: 160px;
+    height: 24px;
+  }
+}
 
 .header__btn {
   padding-left: 20px;
@@ -70,6 +87,11 @@ body {
   color: rgb(66, 66, 66);
   background-color: rgb(232, 232, 232);
   border: none;
+}
+@media screen and (max-width: 768px) {
+  .header__btn {
+    height: 24px;
+  }
 }
 .header__btn:hover {
   background-color: rgb(195, 195, 195);
